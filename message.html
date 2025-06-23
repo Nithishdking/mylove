@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Final Message</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #fff;
+      margin-bottom: 40px;
+      max-width: 600px;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 10px;
+      background: #fff;
+      color: #e91e63;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #ffe6ec;
+    }
+
+    .confetti {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      background: red;
+      top: 0;
+      animation: fall 5s linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-10px);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
+
+    .message {
+      display: none;
+      font-size: 2rem;
+      color: #fff;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>This is not the end...</h1>
+  <p>Every page here was a piece of my heart. But there's one last surprise waiting for you. 💖</p>
+
+  <button onclick="launchSurprise()">Click here 🎁</button>
+
+  <div class="message" id="finalText">🎉 Happy Birthday, My Love! 🎉<br>Forever Yours 💞</div>
+
+  <script>
+    function launchSurprise() {
+      // show final message
+      document.getElementById("finalText").style.display = "block";
+
+      // create confetti hearts
+      for (let i = 0; i < 100; i++) {
+        let confetti = document.createElement("div");
+        confetti.classList.add("confetti");
+        confetti.style.left = Math.random() * 100 + "vw";
+        confetti.style.background = getRandomColor();
+        confetti.style.width = "10px";
+        confetti.style.height = "10px";
+        confetti.style.borderRadius = "50%";
+        confetti.style.animationDuration = (Math.random() * 3 + 2) + "s";
+        document.body.appendChild(confetti);
+
+        setTimeout(() => {
+          confetti.remove();
+        }, 5000);
+      }
+    }
+
+    function getRandomColor() {
+      const colors = ["#e91e63", "#ff4081", "#f8bbd0", "#f06292", "#f50057"];
+      return colors[Math.floor(Math.random() * colors.length)];
+    }
+  </script>
+
+</body>
+</html>

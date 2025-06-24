@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Birthday Countdown</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #ffe0f0, #fbc2eb);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #e91e63;
+      margin-bottom: 10px;
+    }
+
+    #countdown {
+      font-size: 2rem;
+      background: #fff;
+      color: #e91e63;
+      padding: 15px 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    #birthdayMessage {
+      display: none;
+      font-size: 2.2rem;
+      color: #e91e63;
+      margin-bottom: 20px;
+    }
+
+    #enterBtn {
+      display: none;
+      padding: 12px 25px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      background-color: #e91e63;
+      color: white;
+      cursor: pointer;
+    }
+
+    #enterBtn:hover {
+      background-color: #ff5c8d;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Countdown to Her Birthday 🎂</h1>
+  <div id="countdown">Loading...</div>
+
+  <div id="birthdayMessage">🎉 Happy Birthday, My Love! 🎉</div>
+  <button id="enterBtn" onclick="location.href='index.html'">Enter Website 💖</button>
+
+  <script>
+    // Set your target date/time
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 1); // Set to tomorrow
+    targetDate.setHours(0, 0, 0, 0); // At 12:00 AM
+
+    const countdownEl = document.getElementById("countdown");
+    const birthdayMsg = document.getElementById("birthdayMessage");
+    const enterBtn = document.getElementById("enterBtn");
+
+    function updateCountdown() {
+      const now = new Date();
+      const distance = targetDate - now;
+
+      if (distance <= 0) {
+        countdownEl.style.display = "none";
+        birthdayMsg.style.display = "block";
+        enterBtn.style.display = "inline-block";
+        return;
+      }
+
+      const hours = String(Math.floor((distance / (1000 * 60 * 60)) % 24)).padStart(2, "0");
+      const minutes = String(Math.floor((distance / (1000 * 60)) % 60)).padStart(2, "0");
+      const seconds = String(Math.floor((distance / 1000) % 60)).padStart(2, "0");
+
+      countdownEl.innerHTML = `${hours}:${minutes}:${seconds} remaining`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown(); // initial call
+  </script>
+
+</body>
+</html>

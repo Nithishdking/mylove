@@ -4,46 +4,65 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Our Dreams Together</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Segoe+UI&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      background: linear-gradient(to right, #ffe0ec, #ffe0f4);
       font-family: 'Segoe UI', sans-serif;
-      color: #333;
-      text-align: center;
+      overflow-x: hidden;
     }
 
     .dreams-container {
       max-width: 900px;
       margin: auto;
       padding: 60px 20px;
+      text-align: center;
     }
 
     h1 {
-      font-size: 3rem;
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5rem;
       color: #e91e63;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
+      animation: fadeInDown 2s ease-in-out;
     }
 
     .dream {
-      background: #fff;
-      padding: 20px;
-      margin: 20px 0;
-      border-radius: 15px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
+      position: relative;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px 40px;
+      margin: 25px 0;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #f51b9e;
+      animation: fadeInUp 1s ease;
+      transition: transform 0.3s;
     }
 
     .dream:hover {
       transform: scale(1.02);
     }
 
-    .dream span {
-      font-size: 2rem;
-      display: block;
-      margin-bottom: 10px;
+    .heart-left,
+    .heart-right {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.8rem;
+      color: #ff0202;
+      opacity: 0.8;
+    }
+
+    .heart-left {
+      left: 20px;
+    }
+
+    .heart-right {
+      right: 20px;
     }
 
     a.back-link {
@@ -52,7 +71,7 @@
       text-decoration: none;
       color: #fff;
       background: #e91e63;
-      padding: 10px 20px;
+      padding: 12px 24px;
       border-radius: 10px;
       font-weight: bold;
       transition: background 0.3s ease;
@@ -61,46 +80,75 @@
     a.back-link:hover {
       background: #ff5c8d;
     }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 <body>
 
   <div class="dreams-container">
-    <h1>🌟 Our Dreams Together 🌟</h1>
+    <h1>Our Dreams Together</h1>
 
     <div class="dream">
-      <span>✈️</span>
-      Travel together to a peaceful mountain and hold hands under the stars.
+      <div class="heart-left">❤️</div>
+      Ride beside me through winding hills on my bike, feeling the breeze and hearing only your laughter.
+      <div class="heart-right">❤️</div>
     </div>
 
     <div class="dream">
-      <span>💍</span>
-      Get married in a simple temple ceremony with blessings from our loved ones.
+      <div class="heart-left">❤️</div>
+      Stand beside you in a quiet temple, eyes locked, hearts full, and finally say, “I’m yours forever.”
+      <div class="heart-right">❤️</div>
     </div>
 
     <div class="dream">
-      <span>🏡</span>
-      Build our own little home filled with laughter, food, and love.
+      <div class="heart-left">❤️</div>
+      Build a home where our love echoes in every room — with silly fights, tight hugs, and warm meals.
+      <div class="heart-right">❤️</div>
     </div>
 
     <div class="dream">
-      <span>👶</span>
-      Have a little baby who looks like you and smiles like us.
+      <div class="heart-left">❤️</div>
+      Hold our little baby girl, with your eyes and your smile, and whisper, “She’s perfect.”
+      <div class="heart-right">❤️</div>
     </div>
 
     <div class="dream">
-      <span>🎂</span>
-      Celebrate every birthday together — just like this one — with smiles and surprises.
+      <div class="heart-left">❤️</div>
+      Plan surprise birthdays for you every year — with candles, confetti, cuddles, and cake on your cheeks.
+      <div class="heart-right">❤️</div>
     </div>
 
     <div class="dream">
-      <span>🌍</span>
-      Explore the world together — one beach, one sunrise, one hug at a time.
+      <div class="heart-left">❤️</div>
+      Travel to unknown places with known love — watching sunsets, making memories, and writing our story.
+      <div class="heart-right">❤️</div>
     </div>
 
     <div class="dream">
-      <span>🧓</span>
-      Grow old side by side, still calling each other by the same nicknames.
+      <div class="heart-left">❤️</div>
+      Sit beside you at 80, still holding hands, still calling you the same pet names, still in love.
+      <div class="heart-right">❤️</div>
     </div>
 
     <a href="index.html" class="back-link">← Back to Home</a>
